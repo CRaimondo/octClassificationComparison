@@ -7,7 +7,7 @@ This project features two models, ResNet-18 + CBAM and HuggingFace Vision Transf
 
 Our project was ran GPU using the NYU Greene HPC.
 
-Notes on creating label CSV files from original data download:
+Notes on creating label CSV files from original data download for use with ResNet models:
 The original data was downloaded as 1 directory with  2 sub-directories 'Test, Train' each with 4 folders for each class: 'NORMAL, DRUSEN, CNV, DME'
 No label csv files was provided, so label indication was through the image names (example: 'CNV-1112835-371.jpeg').
 
@@ -21,3 +21,5 @@ Trainning and Validation Split:
 Inside HPC, OCT_TrainLabels.csv was split randomly into Train_dataset_NEW.csv and Val_dataset_NEW.csv using an 80/20 split.
 
 For hyperparameter tunning, subsets (0.25 of full dataset) were generated, called Train_Subset.csv and Val_Subset.csv
+
+For the ViT model, the ImageFolder class from torchvision was used to gather images and class labels from the respective folders the images are contained in. Datasets were created from 
